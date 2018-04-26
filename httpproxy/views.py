@@ -68,7 +68,7 @@ class HttpProxy(View):
 
     _msg = 'Response body: \n%s'
 
-    def dispatch(self, request, url, *args, **kwargs):
+    def dispatch(self, request, *args, **kwargs):
         self.url = url
         self.original_request_path = request.path
         request = self.normalize_request(request)
