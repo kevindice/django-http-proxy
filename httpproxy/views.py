@@ -70,7 +70,7 @@ class HttpProxy(View):
     _msg = 'Response body: \n%s'
 
     def dispatch(self, request, *args, **kwargs):
-        self.url = request.path + reverse('ag')
+        self.url = request.path[ len(reverse('ag')): ]
         self.original_request_path = request.path
         request = self.normalize_request(request)
         if self.mode == 'play':
